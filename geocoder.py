@@ -5,7 +5,7 @@ import sys
 def geocoder(address):
     api_server = "https://geocode-maps.yandex.ru/1.x/?"
     params = {
-        "apikey": "8013b162-6b42-4997-9691-77b7074026e0",
+        "apikey": YOU_APIKEY,
         "geocode": address,
         "format": "json"
     }
@@ -31,7 +31,7 @@ def map_object(coords, spn):
         'll': ','.join(coords.split()),
         'spn': spn,
         'pt': ','.join(coords.split()),
-        'apikey': 'c37b0772-bdf0-4f65-a7e4-e8e975f896be'
+        'apikey': YOU_APIKEY
     }
     request_map = requests.get(api_address, params=params)
     response = request_map.content
